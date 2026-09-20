@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:nether_star",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:astral_core"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.root.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.root.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "starforge:gui/advancements/backgrounds/starforge"
+  },
+  "sends_telemetry_event": false,
+  "criteria": {
+    "joined": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [
+    [
+      "joined"
+    ]
+  ]
+}

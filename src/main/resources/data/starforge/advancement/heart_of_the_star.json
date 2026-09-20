@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:heart_of_the_star"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.heart_of_the_star.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.heart_of_the_star.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:full_plate",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:totem_of_undying",
+            "components": {
+              "minecraft:item_model": "starforge:heart_of_the_star"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 250
+  }
+}

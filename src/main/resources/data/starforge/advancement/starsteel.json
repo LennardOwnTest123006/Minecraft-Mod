@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:netherite_ingot",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:starsteel_ingot"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.starsteel.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.starsteel.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:root",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:netherite_ingot",
+            "components": {
+              "minecraft:item_model": "starforge:starsteel_ingot"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

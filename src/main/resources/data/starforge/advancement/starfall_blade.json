@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:netherite_sword",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:starfall_blade"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.starfall_blade.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.starfall_blade.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:astral_core",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:netherite_sword",
+            "components": {
+              "minecraft:item_model": "starforge:starfall_blade"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

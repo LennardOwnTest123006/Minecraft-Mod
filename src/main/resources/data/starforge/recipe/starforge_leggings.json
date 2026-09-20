@@ -1,0 +1,77 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "nSn",
+    " b "
+  ],
+  "key": {
+    "S": "minecraft:nether_star",
+    "n": "minecraft:netherite_ingot",
+    "b": "minecraft:netherite_leggings"
+  },
+  "result": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:starforge_leggings",
+      "minecraft:item_name": {
+        "text": "Starforge Greaves",
+        "italic": false,
+        "color": "gold",
+        "bold": true
+      },
+      "minecraft:rarity": "epic",
+      "minecraft:lore": [
+        {
+          "text": "You weigh a little less than you should.",
+          "italic": false,
+          "color": "gray"
+        }
+      ],
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:max_damage": 2400,
+      "minecraft:equippable": {
+        "asset_id": "starforge:starforge",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "slot": "legs"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "amount": 9.0,
+          "id": "starforge:starforge_leggings.armor",
+          "operation": "add_value",
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "amount": 5.0,
+          "id": "starforge:starforge_leggings.toughness",
+          "operation": "add_value",
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "amount": 0.15,
+          "id": "starforge:starforge_leggings.knockback",
+          "operation": "add_value",
+          "slot": "legs"
+        },
+        {
+          "type": "minecraft:max_absorption",
+          "amount": 2.0,
+          "id": "starforge:starforge_leggings.absorption",
+          "operation": "add_value",
+          "slot": "legs"
+        }
+      ],
+      "minecraft:enchantments": {
+        "starforge:gravitas": 3,
+        "starforge:aegis": 5,
+        "minecraft:swift_sneak": 3,
+        "starforge:eternal": 5
+      }
+    }
+  }
+}

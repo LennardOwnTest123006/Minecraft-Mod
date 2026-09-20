@@ -1,0 +1,55 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.eternal"
+  },
+  "supported_items": "#minecraft:enchantable/durability",
+  "exclusive_set": "#starforge:exclusive_set/durability",
+  "weight": 2,
+  "max_level": 5,
+  "anvil_cost": 4,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 9
+  },
+  "max_cost": {
+    "base": 60,
+    "per_level_above_first": 9
+  },
+  "slots": [
+    "any"
+  ],
+  "effects": {
+    "minecraft:item_damage": [
+      {
+        "effect": {
+          "type": "minecraft:remove_binomial",
+          "chance": {
+            "type": "minecraft:fraction",
+            "numerator": {
+              "type": "minecraft:linear",
+              "base": 3.0,
+              "per_level_above_first": 1.0
+            },
+            "denominator": {
+              "type": "minecraft:linear",
+              "base": 4.0,
+              "per_level_above_first": 1.0
+            }
+          }
+        }
+      }
+    ],
+    "minecraft:repair_with_xp": [
+      {
+        "effect": {
+          "type": "minecraft:multiply",
+          "factor": {
+            "type": "minecraft:linear",
+            "base": 1.0,
+            "per_level_above_first": 0.5
+          }
+        }
+      }
+    ]
+  }
+}

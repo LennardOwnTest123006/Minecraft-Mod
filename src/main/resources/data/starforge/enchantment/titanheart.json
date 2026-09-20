@@ -1,0 +1,54 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.titanheart"
+  },
+  "supported_items": "#minecraft:enchantable/chest_armor",
+  "weight": 1,
+  "max_level": 3,
+  "anvil_cost": 8,
+  "min_cost": {
+    "base": 22,
+    "per_level_above_first": 22
+  },
+  "max_cost": {
+    "base": 75,
+    "per_level_above_first": 22
+  },
+  "slots": [
+    "chest"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "attribute": "minecraft:max_health",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 4.0,
+          "per_level_above_first": 4.0
+        },
+        "id": "starforge:enchantment.titanheart.health",
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:knockback_resistance",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.15,
+          "per_level_above_first": 0.15
+        },
+        "id": "starforge:enchantment.titanheart.knockback",
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:armor_toughness",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 2.0,
+          "per_level_above_first": 1.5
+        },
+        "id": "starforge:enchantment.titanheart.toughness",
+        "operation": "add_value"
+      }
+    ]
+  }
+}

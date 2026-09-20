@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "starforge",
+  "version": "1.0.0",
+  "name": "Starforge",
+  "description": "Starforge adds an endgame star-metal progression to Minecraft: three new crafting materials, a full arsenal of forged relics with their own art, a matching armour set, and twelve new enchantments that show up at the enchanting table, the anvil and in villager trades.",
+  "authors": [
+    "Starforge"
+  ],
+  "license": "MIT",
+  "icon": "assets/starforge/icon.png",
+  "environment": "*",
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-resource-loader-v0": "*"
+  }
+}

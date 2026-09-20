@@ -1,0 +1,54 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.starlight"
+  },
+  "supported_items": "#minecraft:enchantable/head_armor",
+  "weight": 2,
+  "max_level": 3,
+  "anvil_cost": 4,
+  "min_cost": {
+    "base": 14,
+    "per_level_above_first": 16
+  },
+  "max_cost": {
+    "base": 60,
+    "per_level_above_first": 16
+  },
+  "slots": [
+    "head"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "attribute": "minecraft:luck",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1.0,
+          "per_level_above_first": 1.0
+        },
+        "id": "starforge:enchantment.starlight.luck",
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:oxygen_bonus",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 2.0,
+          "per_level_above_first": 2.0
+        },
+        "id": "starforge:enchantment.starlight.oxygen",
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:submerged_mining_speed",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.25,
+          "per_level_above_first": 0.25
+        },
+        "id": "starforge:enchantment.starlight.mining",
+        "operation": "add_value"
+      }
+    ]
+  }
+}

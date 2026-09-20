@@ -1,0 +1,67 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.skybreaker"
+  },
+  "supported_items": "#minecraft:enchantable/mace",
+  "exclusive_set": "#starforge:exclusive_set/smash",
+  "weight": 2,
+  "max_level": 5,
+  "anvil_cost": 4,
+  "min_cost": {
+    "base": 15,
+    "per_level_above_first": 9
+  },
+  "max_cost": {
+    "base": 65,
+    "per_level_above_first": 9
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:smash_damage_per_fallen_block": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 0.75,
+            "per_level_above_first": 0.75
+          }
+        }
+      }
+    ],
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "enchanted": "attacker",
+        "effect": {
+          "type": "minecraft:spawn_particles",
+          "particle": {
+            "type": "minecraft:gust"
+          },
+          "horizontal_position": {
+            "type": "in_bounding_box"
+          },
+          "horizontal_velocity": {
+            "movement_scale": 0.0
+          },
+          "vertical_position": {
+            "type": "entity_position",
+            "offset": 0.4
+          },
+          "vertical_velocity": {
+            "base": 0.25
+          },
+          "speed": 0.8
+        },
+        "requirements": {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_direct": true
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "starforge:starforge"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "starforge:starforge"
+      }
+    ]
+  }
+}

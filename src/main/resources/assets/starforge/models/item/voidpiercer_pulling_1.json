@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "starforge:item/voidpiercer_pulling_1"
+  }
+}

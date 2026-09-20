@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "has_star": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:nether_star"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_star"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "starforge:astral_core",
+      "starforge:astral_elixir",
+      "starforge:heart_of_the_star",
+      "starforge:starfall_blade",
+      "starforge:starforge_boots",
+      "starforge:starforge_chestplate",
+      "starforge:starforge_helmet",
+      "starforge:starforge_leggings",
+      "starforge:starforge_pickaxe",
+      "starforge:starsteel_ingot",
+      "starforge:voidpiercer",
+      "starforge:voidshard",
+      "starforge:worldbreaker"
+    ]
+  },
+  "sends_telemetry_event": false
+}

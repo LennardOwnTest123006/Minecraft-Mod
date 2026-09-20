@@ -1,0 +1,13 @@
+{
+  "asset_id": "starforge:forgeheart",
+  "width": 2,
+  "height": 1,
+  "title": {
+    "translate": "painting.starforge.forgeheart.title",
+    "color": "yellow"
+  },
+  "author": {
+    "translate": "painting.starforge.forgeheart.author",
+    "color": "gray"
+  }
+}

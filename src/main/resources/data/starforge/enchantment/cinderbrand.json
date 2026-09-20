@@ -1,0 +1,61 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.cinderbrand"
+  },
+  "supported_items": "#minecraft:enchantable/fire_aspect",
+  "primary_items": "#minecraft:enchantable/melee_weapon",
+  "exclusive_set": "#starforge:exclusive_set/ignition",
+  "weight": 2,
+  "max_level": 3,
+  "anvil_cost": 4,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 20
+  },
+  "max_cost": {
+    "base": 62,
+    "per_level_above_first": 20
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "enchanted": "attacker",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:ignite",
+              "duration": {
+                "type": "minecraft:linear",
+                "base": 6.0,
+                "per_level_above_first": 5.0
+              }
+            },
+            {
+              "type": "minecraft:apply_mob_effect",
+              "to_apply": "minecraft:weakness",
+              "min_duration": 4.0,
+              "max_duration": {
+                "type": "minecraft:linear",
+                "base": 4.0,
+                "per_level_above_first": 2.0
+              },
+              "min_amplifier": 0.0,
+              "max_amplifier": 1.0
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_direct": true
+          }
+        }
+      }
+    ]
+  }
+}

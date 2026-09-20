@@ -1,0 +1,40 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:echo_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "starforge:voidshard",
+                "minecraft:item_name": {
+                  "text": "Voidshard",
+                  "italic": false,
+                  "color": "light_purple",
+                  "bold": true
+                },
+                "minecraft:rarity": "rare",
+                "minecraft:lore": [
+                  {
+                    "text": "A splinter of the space between places.",
+                    "italic": false,
+                    "color": "gray"
+                  },
+                  {
+                    "text": "It hums when you are not looking.",
+                    "italic": false,
+                    "color": "gray"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

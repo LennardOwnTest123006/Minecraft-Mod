@@ -1,0 +1,46 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.quarrymind"
+  },
+  "supported_items": "#minecraft:enchantable/mining",
+  "exclusive_set": "#minecraft:exclusive_set/mining",
+  "weight": 3,
+  "max_level": 5,
+  "anvil_cost": 2,
+  "min_cost": {
+    "base": 6,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 56,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "attribute": "minecraft:mining_efficiency",
+        "amount": {
+          "type": "minecraft:levels_squared",
+          "added": 2.0
+        },
+        "id": "starforge:enchantment.quarrymind.speed",
+        "operation": "add_value"
+      }
+    ],
+    "minecraft:block_experience": [
+      {
+        "effect": {
+          "type": "minecraft:multiply",
+          "factor": {
+            "type": "minecraft:linear",
+            "base": 1.5,
+            "per_level_above_first": 0.5
+          }
+        }
+      }
+    ]
+  }
+}

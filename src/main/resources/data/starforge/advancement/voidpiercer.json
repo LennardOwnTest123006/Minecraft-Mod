@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:bow",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:voidpiercer"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.voidpiercer.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.voidpiercer.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:astral_core",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bow",
+            "components": {
+              "minecraft:item_model": "starforge:voidpiercer"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

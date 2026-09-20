@@ -1,0 +1,54 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.gravitas"
+  },
+  "supported_items": "#minecraft:enchantable/leg_armor",
+  "weight": 1,
+  "max_level": 3,
+  "anvil_cost": 8,
+  "min_cost": {
+    "base": 20,
+    "per_level_above_first": 20
+  },
+  "max_cost": {
+    "base": 72,
+    "per_level_above_first": 20
+  },
+  "slots": [
+    "legs"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "attribute": "minecraft:gravity",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.012,
+          "per_level_above_first": -0.008
+        },
+        "id": "starforge:enchantment.gravitas.gravity",
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:jump_strength",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.08,
+          "per_level_above_first": 0.06
+        },
+        "id": "starforge:enchantment.gravitas.jump",
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:fall_damage_multiplier",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.2,
+          "per_level_above_first": -0.15
+        },
+        "id": "starforge:enchantment.gravitas.fall",
+        "operation": "add_value"
+      }
+    ]
+  }
+}

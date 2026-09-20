@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:netherite_ingot",
+    "minecraft:echo_shard",
+    "minecraft:echo_shard",
+    "minecraft:blaze_powder",
+    "minecraft:amethyst_shard"
+  ],
+  "result": {
+    "id": "minecraft:netherite_ingot",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:starsteel_ingot",
+      "minecraft:item_name": {
+        "text": "Starsteel Ingot",
+        "italic": false,
+        "color": "gold",
+        "bold": true
+      },
+      "minecraft:rarity": "rare",
+      "minecraft:lore": [
+        {
+          "text": "Star-metal, quenched in void water.",
+          "italic": false,
+          "color": "gray"
+        },
+        {
+          "text": "Still faintly warm.",
+          "italic": false,
+          "color": "gray"
+        }
+      ]
+    }
+  }
+}

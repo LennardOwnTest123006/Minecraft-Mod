@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:echo_shard",
+    "minecraft:amethyst_shard",
+    "minecraft:amethyst_shard",
+    "minecraft:ender_pearl",
+    "minecraft:obsidian"
+  ],
+  "result": {
+    "id": "minecraft:echo_shard",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:voidshard",
+      "minecraft:item_name": {
+        "text": "Voidshard",
+        "italic": false,
+        "color": "light_purple",
+        "bold": true
+      },
+      "minecraft:rarity": "rare",
+      "minecraft:lore": [
+        {
+          "text": "A splinter of the space between places.",
+          "italic": false,
+          "color": "gray"
+        },
+        {
+          "text": "It hums when you are not looking.",
+          "italic": false,
+          "color": "gray"
+        }
+      ]
+    }
+  }
+}

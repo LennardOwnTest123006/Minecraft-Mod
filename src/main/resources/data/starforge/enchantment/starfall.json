@@ -1,0 +1,79 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.starfall"
+  },
+  "supported_items": "#minecraft:enchantable/sharp_weapon",
+  "primary_items": "#minecraft:enchantable/melee_weapon",
+  "exclusive_set": "#minecraft:exclusive_set/damage",
+  "weight": 3,
+  "max_level": 5,
+  "anvil_cost": 4,
+  "min_cost": {
+    "base": 8,
+    "per_level_above_first": 11
+  },
+  "max_cost": {
+    "base": 30,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:damage": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 2.0,
+            "per_level_above_first": 1.5
+          }
+        }
+      }
+    ],
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "enchanted": "attacker",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:spawn_particles",
+              "particle": {
+                "type": "minecraft:end_rod"
+              },
+              "horizontal_position": {
+                "type": "in_bounding_box"
+              },
+              "horizontal_velocity": {
+                "movement_scale": 0.0
+              },
+              "vertical_position": {
+                "type": "entity_position",
+                "offset": 0.4
+              },
+              "vertical_velocity": {
+                "base": 0.2
+              },
+              "speed": 0.6
+            },
+            {
+              "type": "minecraft:play_sound",
+              "sound": "minecraft:entity.firework_rocket.blast",
+              "volume": 0.7,
+              "pitch": 1.6
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_direct": true
+          }
+        }
+      }
+    ]
+  }
+}

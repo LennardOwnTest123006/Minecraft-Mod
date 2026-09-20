@@ -1,0 +1,64 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:netherite_chestplate",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:starforge_chestplate"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.full_plate.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.full_plate.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:astral_core",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:netherite_helmet",
+            "components": {
+              "minecraft:item_model": "starforge:starforge_helmet"
+            }
+          },
+          {
+            "items": "minecraft:netherite_chestplate",
+            "components": {
+              "minecraft:item_model": "starforge:starforge_chestplate"
+            }
+          },
+          {
+            "items": "minecraft:netherite_leggings",
+            "components": {
+              "minecraft:item_model": "starforge:starforge_leggings"
+            }
+          },
+          {
+            "items": "minecraft:netherite_boots",
+            "components": {
+              "minecraft:item_model": "starforge:starforge_boots"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 150
+  }
+}

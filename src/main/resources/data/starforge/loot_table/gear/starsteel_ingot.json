@@ -1,0 +1,40 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_ingot",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "starforge:starsteel_ingot",
+                "minecraft:item_name": {
+                  "text": "Starsteel Ingot",
+                  "italic": false,
+                  "color": "gold",
+                  "bold": true
+                },
+                "minecraft:rarity": "rare",
+                "minecraft:lore": [
+                  {
+                    "text": "Star-metal, quenched in void water.",
+                    "italic": false,
+                    "color": "gray"
+                  },
+                  {
+                    "text": "Still faintly warm.",
+                    "italic": false,
+                    "color": "gray"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "nSn",
+    " b "
+  ],
+  "key": {
+    "S": "minecraft:nether_star",
+    "n": "minecraft:netherite_ingot",
+    "b": "minecraft:netherite_boots"
+  },
+  "result": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:starforge_boots",
+      "minecraft:item_name": {
+        "text": "Starforge Sabatons",
+        "italic": false,
+        "color": "gold",
+        "bold": true
+      },
+      "minecraft:rarity": "epic",
+      "minecraft:lore": [
+        {
+          "text": "Every step lands somewhere slightly else.",
+          "italic": false,
+          "color": "gray"
+        }
+      ],
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:max_damage": 2400,
+      "minecraft:equippable": {
+        "asset_id": "starforge:starforge",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "slot": "feet"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "amount": 6.0,
+          "id": "starforge:starforge_boots.armor",
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "amount": 5.0,
+          "id": "starforge:starforge_boots.toughness",
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "amount": 0.15,
+          "id": "starforge:starforge_boots.knockback",
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:max_absorption",
+          "amount": 2.0,
+          "id": "starforge:starforge_boots.absorption",
+          "operation": "add_value",
+          "slot": "feet"
+        }
+      ],
+      "minecraft:enchantments": {
+        "starforge:voidstep": 3,
+        "starforge:aegis": 5,
+        "minecraft:feather_falling": 4,
+        "minecraft:depth_strider": 3,
+        "starforge:eternal": 5
+      }
+    }
+  }
+}

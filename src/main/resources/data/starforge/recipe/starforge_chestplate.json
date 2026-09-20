@@ -1,0 +1,77 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "nSn",
+    " b "
+  ],
+  "key": {
+    "S": "minecraft:nether_star",
+    "n": "minecraft:netherite_ingot",
+    "b": "minecraft:netherite_chestplate"
+  },
+  "result": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:starforge_chestplate",
+      "minecraft:item_name": {
+        "text": "Starforge Cuirass",
+        "italic": false,
+        "color": "gold",
+        "bold": true
+      },
+      "minecraft:rarity": "epic",
+      "minecraft:lore": [
+        {
+          "text": "Plated with the skin of a dead star.",
+          "italic": false,
+          "color": "gray"
+        }
+      ],
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:max_damage": 2400,
+      "minecraft:equippable": {
+        "asset_id": "starforge:starforge",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "slot": "chest"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "amount": 12.0,
+          "id": "starforge:starforge_chestplate.armor",
+          "operation": "add_value",
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "amount": 6.0,
+          "id": "starforge:starforge_chestplate.toughness",
+          "operation": "add_value",
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "amount": 0.15,
+          "id": "starforge:starforge_chestplate.knockback",
+          "operation": "add_value",
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:max_absorption",
+          "amount": 2.0,
+          "id": "starforge:starforge_chestplate.absorption",
+          "operation": "add_value",
+          "slot": "chest"
+        }
+      ],
+      "minecraft:enchantments": {
+        "starforge:titanheart": 3,
+        "starforge:aegis": 5,
+        "minecraft:thorns": 3,
+        "starforge:eternal": 5
+      }
+    }
+  }
+}

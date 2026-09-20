@@ -1,0 +1,88 @@
+{
+  "description": {
+    "translate": "enchantment.starforge.voidstep"
+  },
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 2,
+  "max_level": 3,
+  "anvil_cost": 4,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 18
+  },
+  "max_cost": {
+    "base": 60,
+    "per_level_above_first": 18
+  },
+  "slots": [
+    "feet"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "attribute": "minecraft:movement_speed",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.04,
+          "per_level_above_first": 0.03
+        },
+        "id": "starforge:enchantment.voidstep.speed",
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:safe_fall_distance",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 6.0,
+          "per_level_above_first": 6.0
+        },
+        "id": "starforge:enchantment.voidstep.fall",
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:step_height",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.5,
+          "per_level_above_first": 0.25
+        },
+        "id": "starforge:enchantment.voidstep.step",
+        "operation": "add_value"
+      }
+    ],
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:spawn_particles",
+          "particle": {
+            "type": "minecraft:portal"
+          },
+          "horizontal_position": {
+            "type": "in_bounding_box"
+          },
+          "horizontal_velocity": {
+            "movement_scale": 0.0
+          },
+          "vertical_position": {
+            "type": "entity_position",
+            "offset": 0.4
+          },
+          "vertical_velocity": {
+            "base": 0.02
+          },
+          "speed": 0.2
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "flags": {
+              "is_on_ground": true
+            },
+            "periodic_tick": 6
+          }
+        }
+      }
+    ]
+  }
+}

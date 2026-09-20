@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:echo_shard",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:voidshard"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.voidshard.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.voidshard.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:root",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:echo_shard",
+            "components": {
+              "minecraft:item_model": "starforge:voidshard"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

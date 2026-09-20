@@ -1,0 +1,13 @@
+{
+  "asset_id": "starforge:starfall",
+  "width": 2,
+  "height": 2,
+  "title": {
+    "translate": "painting.starforge.starfall.title",
+    "color": "yellow"
+  },
+  "author": {
+    "translate": "painting.starforge.starfall.author",
+    "color": "gray"
+  }
+}

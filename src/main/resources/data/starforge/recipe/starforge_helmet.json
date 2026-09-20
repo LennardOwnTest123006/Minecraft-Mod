@@ -1,0 +1,78 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "nSn",
+    " b "
+  ],
+  "key": {
+    "S": "minecraft:nether_star",
+    "n": "minecraft:netherite_ingot",
+    "b": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:starforge_helmet",
+      "minecraft:item_name": {
+        "text": "Starforge Helm",
+        "italic": false,
+        "color": "gold",
+        "bold": true
+      },
+      "minecraft:rarity": "epic",
+      "minecraft:lore": [
+        {
+          "text": "The sky looks closer through this visor.",
+          "italic": false,
+          "color": "gray"
+        }
+      ],
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:max_damage": 2400,
+      "minecraft:equippable": {
+        "asset_id": "starforge:starforge",
+        "equip_sound": "minecraft:item.armor.equip_netherite",
+        "slot": "head"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "amount": 6.0,
+          "id": "starforge:starforge_helmet.armor",
+          "operation": "add_value",
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "amount": 5.0,
+          "id": "starforge:starforge_helmet.toughness",
+          "operation": "add_value",
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "amount": 0.15,
+          "id": "starforge:starforge_helmet.knockback",
+          "operation": "add_value",
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:max_absorption",
+          "amount": 2.0,
+          "id": "starforge:starforge_helmet.absorption",
+          "operation": "add_value",
+          "slot": "head"
+        }
+      ],
+      "minecraft:enchantments": {
+        "starforge:starlight": 3,
+        "starforge:aegis": 5,
+        "minecraft:respiration": 3,
+        "minecraft:aqua_affinity": 1,
+        "starforge:eternal": 5
+      }
+    }
+  }
+}

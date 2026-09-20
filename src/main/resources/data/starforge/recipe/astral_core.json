@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "nvn",
+    "vSv",
+    "nvn"
+  ],
+  "key": {
+    "n": "minecraft:netherite_ingot",
+    "v": "minecraft:echo_shard",
+    "S": "minecraft:nether_star"
+  },
+  "result": {
+    "id": "minecraft:nether_star",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:astral_core",
+      "minecraft:item_name": {
+        "text": "Astral Core",
+        "italic": false,
+        "color": "yellow",
+        "bold": true
+      },
+      "minecraft:rarity": "epic",
+      "minecraft:lore": [
+        {
+          "text": "The heart of a collapsed star.",
+          "italic": false,
+          "color": "gray"
+        },
+        {
+          "text": "Every Starforge relic begins here.",
+          "italic": false,
+          "color": "gray"
+        }
+      ],
+      "minecraft:enchantment_glint_override": true
+    }
+  }
+}

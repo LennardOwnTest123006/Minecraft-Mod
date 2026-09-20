@@ -1,0 +1,13 @@
+{
+  "asset_id": "starforge:voidgate",
+  "width": 1,
+  "height": 1,
+  "title": {
+    "translate": "painting.starforge.voidgate.title",
+    "color": "yellow"
+  },
+  "author": {
+    "translate": "painting.starforge.voidgate.author",
+    "color": "gray"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "nSn",
+    " p "
+  ],
+  "key": {
+    "S": "minecraft:nether_star",
+    "n": "minecraft:netherite_ingot",
+    "p": "minecraft:netherite_pickaxe"
+  },
+  "result": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:starforge_pickaxe",
+      "minecraft:item_name": {
+        "text": "Starforge Pickaxe",
+        "italic": false,
+        "color": "aqua",
+        "bold": true
+      },
+      "minecraft:rarity": "epic",
+      "minecraft:lore": [
+        {
+          "text": "Stone remembers being dust.",
+          "italic": false,
+          "color": "gray"
+        }
+      ],
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:max_damage": 4096,
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "amount": 7.0,
+          "id": "starforge:starforge_pickaxe.damage",
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "amount": -2.6,
+          "id": "starforge:starforge_pickaxe.speed",
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:block_interaction_range",
+          "amount": 2.0,
+          "id": "starforge:starforge_pickaxe.reach",
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:enchantments": {
+        "starforge:quarrymind": 5,
+        "starforge:eternal": 5,
+        "minecraft:fortune": 5,
+        "minecraft:efficiency": 8
+      }
+    }
+  }
+}
