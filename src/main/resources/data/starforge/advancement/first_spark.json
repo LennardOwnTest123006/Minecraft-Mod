@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:amethyst_shard",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:starsteel_shard"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.first_spark.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.first_spark.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:root",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:amethyst_shard",
+            "components": {
+              "minecraft:item_model": "starforge:starsteel_shard"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 15
+  }
+}

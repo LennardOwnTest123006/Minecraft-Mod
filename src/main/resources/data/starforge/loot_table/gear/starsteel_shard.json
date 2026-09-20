@@ -1,0 +1,40 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:amethyst_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "starforge:starsteel_shard",
+                "minecraft:item_name": {
+                  "text": "Starsteel Shard",
+                  "italic": false,
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:rarity": "uncommon",
+                "minecraft:lore": [
+                  {
+                    "text": "The first spark of the forge.",
+                    "italic": false,
+                    "color": "gray"
+                  },
+                  {
+                    "text": "Cold amethyst, warmed by copper.",
+                    "italic": false,
+                    "color": "gray"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

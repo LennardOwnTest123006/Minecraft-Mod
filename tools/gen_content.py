@@ -12,7 +12,7 @@ import shutil
 
 MOD_ID = "starforge"
 MOD_NAME = "Starforge"
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 MC = "1.21.11"
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -543,6 +543,80 @@ GEAR["astral_elixir"] = gear(
     })
 
 
+
+# --- early tier: reachable in the first hour, long before the Wither -------
+GEAR["starsteel_shard"] = gear(
+    "minecraft:amethyst_shard", "starsteel_shard", "Starsteel Shard", "aqua",
+    ["The first spark of the forge.", "Cold amethyst, warmed by copper."],
+    rarity="uncommon", glint=False)
+
+GEAR["emberbrand"] = gear(
+    "minecraft:iron_sword", "emberbrand", "Emberbrand", "gold",
+    ["An apprentice blade.", "It still remembers the fire."],
+    rarity="uncommon",
+    **{
+        "minecraft:max_damage": 900,
+        "minecraft:attribute_modifiers": mods(
+            am("attack_damage", 7.0, "emberbrand.damage", "mainhand"),
+            am("attack_speed", -2.2, "emberbrand.speed", "mainhand"),
+        ),
+        "minecraft:enchantments": {
+            f"{MOD_ID}:cinderbrand": 2, f"{MOD_ID}:starfall": 2,
+            f"{MOD_ID}:eternal": 2,
+        },
+    })
+
+CODEX_PAGES = [
+    [txt("STARFORGE\n\n", "dark_red", bold=True),
+     txt("A forge that runs on starlight.\n\n", "black"),
+     txt("Every Starforge recipe is already in your recipe book. "
+         "Open it and search for the items below.\n\n", "black"),
+     txt("Turn the page to begin.", "dark_gray")],
+    [txt("I. FIRST SPARK\n\n", "dark_red", bold=True),
+     txt("Starsteel Shard\n", "black", bold=True),
+     txt("amethyst shard + copper ingot\n\n", "dark_gray"),
+     txt("Emberbrand\n", "black", bold=True),
+     txt("amethyst shard, iron sword and copper ingot in a column.\n\n",
+         "dark_gray"),
+     txt("A sword that burns what it cuts.", "black")],
+    [txt("II. STAR-METAL\n\n", "dark_red", bold=True),
+     txt("Starsteel Ingot\n", "black", bold=True),
+     txt("netherite ingot, 2 echo shards, blaze powder, amethyst\n\n",
+         "dark_gray"),
+     txt("Voidshard\n", "black", bold=True),
+     txt("echo shard, 2 amethyst, ender pearl, obsidian\n\n", "dark_gray"),
+     txt("Astral Core\n", "black", bold=True),
+     txt("a nether star ringed with starsteel and voidshards.", "dark_gray")],
+    [txt("III. THE ARSENAL\n\n", "dark_red", bold=True),
+     txt("Each relic is a nether star above its vanilla counterpart:\n\n",
+         "black"),
+     txt("Starfall Blade\nWorldbreaker\nVoidpiercer\nStarforge Pickaxe\n"
+         "the four Starforge armour pieces\nHeart of the Star\n"
+         "Astral Elixir", "black")],
+    [txt("IV. ENCHANTMENTS\n\n", "dark_red", bold=True),
+     txt("Twelve new enchantments. Nine appear at the enchanting table:\n\n",
+         "black"),
+     txt("Starfall, Cinderbrand, Soulrend, Skybreaker, Aegis, Voidstep, "
+         "Starlight, Quarrymind, Eternal\n\n", "black"),
+     txt("Titanheart, Gravitas and Stormcaller are treasure only - "
+         "trades, loot and the anvil.", "dark_gray")],
+]
+
+GEAR["starforge_codex"] = gear(
+    "minecraft:written_book", "starforge_codex", "Starforge Codex", "gold",
+    ["Everything the forge knows.", "Craft: book + amethyst shard."],
+    rarity="uncommon", glint=False,
+    **{
+        "minecraft:written_book_content": {
+            "title": "Starforge Codex",
+            "author": "Starforge",
+            "generation": 0,
+            "resolved": True,
+            "pages": CODEX_PAGES,
+        },
+    })
+
+
 # ===========================================================================
 # 3. Recipes
 # ===========================================================================
@@ -595,6 +669,16 @@ RECIPES = {
 for key, base, *_ in _ARMOUR:
     RECIPES[key] = shaped(key, ["nSn", " b "], {"S": STAR, "n": STEEL, "b": base})
 
+# Early tier - no nether star, craftable as soon as you find amethyst.
+RECIPES["starsteel_shard"] = shapeless(
+    "starsteel_shard", ["minecraft:amethyst_shard", "minecraft:copper_ingot"])
+RECIPES["emberbrand"] = shaped(
+    "emberbrand", [" a ", " i ", " c "],
+    {"a": "minecraft:amethyst_shard", "i": "minecraft:iron_sword",
+     "c": "minecraft:copper_ingot"})
+RECIPES["starforge_codex"] = shapeless(
+    "starforge_codex", ["minecraft:book", "minecraft:amethyst_shard"])
+
 
 # ===========================================================================
 # 4. Loot tables - how /function starforge:arsenal hands the set out
@@ -617,6 +701,7 @@ ARSENAL_ORDER = [
     "starforge_helmet", "starforge_chestplate", "starforge_leggings",
     "starforge_boots", "heart_of_the_star", "astral_elixir",
     "starsteel_ingot", "voidshard", "astral_core",
+    "emberbrand", "starsteel_shard", "starforge_codex",
 ]
 
 
@@ -627,6 +712,9 @@ SIMPLE_MODELS = {
     "starfall_blade": "minecraft:item/handheld",
     "worldbreaker": "minecraft:item/handheld",
     "starforge_pickaxe": "minecraft:item/handheld",
+    "emberbrand": "minecraft:item/handheld",
+    "starsteel_shard": "minecraft:item/generated",
+    "starforge_codex": "minecraft:item/generated",
     "starsteel_ingot": "minecraft:item/generated",
     "voidshard": "minecraft:item/generated",
     "astral_core": "minecraft:item/generated",
@@ -717,6 +805,13 @@ ADVANCEMENTS = [
     # key, parent, icon gear, frame, needed gear, title, description, xp
     ("root", None, "astral_core", "task", None,
      "Starforge", "The sky owes you metal. Come and collect.", 0),
+    ("codex", "root", "starforge_codex", "task", ["starforge_codex"],
+     "Read the Manual", "Craft the Starforge Codex and find out what any of "
+     "this does.", 10),
+    ("first_spark", "root", "starsteel_shard", "task", ["starsteel_shard"],
+     "First Spark", "Warm a cold amethyst with copper.", 15),
+    ("emberbrand", "first_spark", "emberbrand", "task", ["emberbrand"],
+     "Apprentice Work", "Forge the Emberbrand, long before you deserve it.", 30),
     ("voidshard", "root", "voidshard", "task", ["voidshard"],
      "Splinter of Nowhere", "Cut a shard out of the space between places.", 20),
     ("starsteel", "root", "starsteel_ingot", "task", ["starsteel_ingot"],
@@ -778,11 +873,11 @@ def write_advancements():
 
     # Hidden advancement that drops every Starforge recipe into the recipe book.
     write(f"data/{MOD_ID}/advancement/recipes/unlock_all.json", {
-        "criteria": {"has_star": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {"items": [{"items": STAR}]},
-        }},
-        "requirements": [["has_star"]],
+        # Fires on the first tick so every Starforge recipe is visible in the
+        # recipe book immediately - the mod is otherwise invisible until the
+        # player happens to craft the right thing by accident.
+        "criteria": {"always": {"trigger": "minecraft:tick"}},
+        "requirements": [["always"]],
         "rewards": {"recipes": [f"{MOD_ID}:{r}" for r in sorted(RECIPES)]},
         "sends_telemetry_event": False,
     })
@@ -828,6 +923,45 @@ def write_functions():
     ]
     write(f"data/{MOD_ID}/function/help.mcfunction", "\n".join(lines))
 
+    # Runs once per world load: creates the bookkeeping objective.
+    write(f"data/{MOD_ID}/function/load.mcfunction", "\n".join([
+        "# Runs on every world load and /reload (minecraft:load tag).",
+        "scoreboard objectives add starforge.seen dummy",
+        "",
+    ]))
+
+    # Runs every tick, but only does anything for a player who has not been
+    # greeted in this world yet.
+    write(f"data/{MOD_ID}/function/tick.mcfunction", "\n".join([
+        "# Runs every tick (minecraft:tick tag).",
+        "execute as @a unless score @s starforge.seen matches 1.. "
+        "run function starforge:greet",
+        "",
+    ]))
+
+    write(f"data/{MOD_ID}/function/greet.mcfunction", "\n".join([
+        "# One-time welcome so it is obvious the mod loaded.",
+        "scoreboard players set @s starforge.seen 1",
+        "tellraw @s " + j([
+            txt(""), txt("[Starforge] ", "gold", bold=True),
+            txt("loaded - 16 relics and 12 new enchantments are active.",
+                "white"),
+        ]),
+        "tellraw @s " + j([
+            txt(""), txt("Every recipe is already in your ", "gray"),
+            txt("recipe book", "aqua"),
+            txt(". Start with a ", "gray"),
+            txt("Starsteel Shard", "aqua"),
+            txt(" (amethyst shard + copper ingot).", "gray"),
+        ]),
+        "tellraw @s " + j([
+            txt(""), txt("Craft the ", "gray"), txt("Starforge Codex", "gold"),
+            txt(" (book + amethyst shard) to read the full guide in game.",
+                "gray"),
+        ]),
+        "",
+    ]))
+
 
 # ===========================================================================
 # 9. Tags
@@ -840,6 +974,11 @@ def write_tags():
     write("data/minecraft/tags/enchantment/on_random_loot.json",
           ns(sorted(ENCHANTMENTS)))
     write("data/minecraft/tags/painting_variant/placeable.json", ns(sorted(PAINTINGS)))
+
+    write("data/minecraft/tags/function/load.json",
+          {"values": [f"{MOD_ID}:load"]})
+    write("data/minecraft/tags/function/tick.json",
+          {"values": [f"{MOD_ID}:tick"]})
 
     write(f"data/{MOD_ID}/tags/enchantment/exclusive_set/ignition.json",
           {"values": ["minecraft:fire_aspect", f"{MOD_ID}:cinderbrand"]})

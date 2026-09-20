@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:written_book",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:starforge_codex"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.codex.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.codex.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:root",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:written_book",
+            "components": {
+              "minecraft:item_model": "starforge:starforge_codex"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

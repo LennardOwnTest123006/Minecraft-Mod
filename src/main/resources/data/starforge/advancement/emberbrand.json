@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:iron_sword",
+      "count": 1,
+      "components": {
+        "minecraft:item_model": "starforge:emberbrand"
+      }
+    },
+    "title": {
+      "translate": "advancements.starforge.emberbrand.title"
+    },
+    "description": {
+      "translate": "advancements.starforge.emberbrand.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "parent": "starforge:first_spark",
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_sword",
+            "components": {
+              "minecraft:item_model": "starforge:emberbrand"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 30
+  }
+}

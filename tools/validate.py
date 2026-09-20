@@ -483,6 +483,67 @@ for dirpath, _d, names in os.walk(os.path.join(RES, f"data/{MOD_ID}/function")):
                     if ref not in OUR_LOOT:
                         fail(f"{rel}:{lineno}: references missing loot table '{ref}'")
 
+# Function tags and every `function ns:name` reference must resolve, otherwise
+# the hook silently never runs.
+OUR_FUNCTIONS = set()
+for dirpath, _d, names in os.walk(os.path.join(RES, f"data/{MOD_ID}/function")):
+    for n in names:
+        if n.endswith(".mcfunction"):
+            rel = os.path.relpath(os.path.join(dirpath, n),
+                                  os.path.join(RES, f"data/{MOD_ID}/function"))
+            OUR_FUNCTIONS.add(rel[:-len(".mcfunction")].replace(os.sep, "/"))
+
+for tag in ("load", "tick"):
+    rel = f"data/minecraft/tags/function/{tag}.json"
+    full = os.path.join(RES, rel)
+    if not os.path.exists(full):
+        continue
+    for v in read(rel)["values"]:
+        checks[0] += 1
+        ns, _, name = v.partition(":")
+        if ns != MOD_ID or name not in OUR_FUNCTIONS:
+            fail(f"{rel}: hook '{v}' has no matching .mcfunction")
+
+for dirpath, _d, names in os.walk(os.path.join(RES, f"data/{MOD_ID}/function")):
+    for n in sorted(names):
+        if not n.endswith(".mcfunction"):
+            continue
+        rel = os.path.relpath(os.path.join(dirpath, n), RES)
+        with open(os.path.join(RES, rel), encoding="utf-8") as fh:
+            for lineno, line in enumerate(fh, 1):
+                line = line.strip()
+                if line.startswith("#") or not line:
+                    continue
+                if line.startswith("tellraw "):
+                    continue          # payload is JSON, checked separately
+                parts = line.split()
+                for i, tok in enumerate(parts):
+                    if tok != "function" or i + 1 >= len(parts):
+                        continue
+                    ref = parts[i + 1]
+                    checks[0] += 1
+                    if not ref.startswith(f"{MOD_ID}:") or \
+                            ref.split(":", 1)[1] not in OUR_FUNCTIONS:
+                        fail(f"{rel}:{lineno}: 'function {ref}' does not resolve")
+                if "loot give" in line and f"{MOD_ID}:" in line:
+                    ref = parts[-1]
+                    checks[0] += 1
+                    if ref.split(":", 1)[1] not in OUR_LOOT:
+                        fail(f"{rel}:{lineno}: loot table '{ref}' does not exist")
+
+# Every gear entry referenced by a recipe must have art and a model behind it.
+for rel, name in files(f"data/{MOD_ID}/recipe"):
+    comps = read(rel)["result"].get("components", {})
+    model = comps.get("minecraft:item_model", "")
+    if model.startswith(f"{MOD_ID}:"):
+        short = model.split(":", 1)[1]
+        for need, label in (
+                (f"assets/{MOD_ID}/items/{short}.json", "item definition"),
+                (f"assets/{MOD_ID}/textures/item/{short}.png", "texture")):
+            checks[0] += 1
+            if not os.path.exists(os.path.join(RES, need)):
+                fail(f"{rel}: result has no {label} ({need})")
+
 fm = read("fabric.mod.json")
 checks[0] += 1
 for field in ("schemaVersion", "id", "version", "name", "description", "license",

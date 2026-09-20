@@ -261,6 +261,71 @@ def hilt(c, cross, grip_dark, grip_light, pommel, cx=4, cy=11):
 
 
 
+
+def emberbrand():
+    """Early-game iron blade with a heat-glowing edge."""
+    c = Canvas()
+    for i in range(9):
+        c.set(12 - i, 1 + i, STEEL_1)
+        c.set(13 - i, 2 + i, STEEL_2)
+        c.set(14 - i, 3 + i, EMBER_2)          # the edge runs hot
+    c.set(13, 1, STEEL_2)
+    c.set(14, 1, STEEL_3)
+    c.set(15, 0, EMBER_4)
+    c.set(14, 2, EMBER_3)
+    for k in (-2, -1, 1, 2):
+        c.set(4 + k, 11 + k, EMBER_1 if abs(k) == 1 else EMBER_0)
+    c.set(4, 11, EMBER_3)
+    for k in range(1, 4):
+        c.set(4 - k, 11 + k, VOID_2 if k % 2 else VOID_3)
+        c.set(5 - k, 11 + k, VOID_1)
+    c.set(1, 14, EMBER_2)
+    c.set(0, 15, EMBER_0)
+    return c
+
+
+def starsteel_shard():
+    """Small early-game crystal: steel blue with an ember heart."""
+    c = Canvas()
+    widths = {3: 0, 4: 1, 5: 2, 11: 2, 12: 1, 13: 0}
+    for y in range(3, 14):
+        hw = widths.get(y, 3)
+        for x in range(8 - hw, 8 + hw + 1):
+            col = mix(STEEL_3, STEEL_1, (8 - x + hw) / (2.0 * hw + 1)) if x < 8 \
+                else mix(STEEL_1, STEEL_0, (x - 8) / 4.0)
+            c.set(x, y, col)
+    for y in range(6, 11):                     # ember heart
+        c.set(8, y, EMBER_2 if y % 2 else EMBER_3)
+    c.set(7, 5, WHITE)
+    c.set(7, 6, STEEL_3)
+    c.set(9, 12, VOID_1)
+    c.set(8, 13, VOID_0)
+    return c
+
+
+def starforge_codex():
+    """A bound book with a star sigil on the cover."""
+    c = Canvas()
+    c.rect(2, 2, 13, 13, VOID_2)               # cover
+    c.rect(2, 2, 13, 2, VOID_3)
+    c.rect(2, 13, 13, 13, VOID_0)
+    c.rect(2, 2, 2, 13, VOID_1)
+    c.rect(3, 3, 4, 12, EMBER_1)               # spine
+    c.set(3, 3, EMBER_3)
+    c.set(4, 12, EMBER_0)
+    c.rect(13, 3, 13, 12, STEEL_1)             # page edges
+    c.rect(12, 3, 12, 12, STEEL_3)
+    for dx, dy in ((0, -3), (0, 3), (-3, 0), (3, 0)):   # star sigil
+        c.set(8 + dx, 8 + dy, EMBER_3)
+    for dx, dy in ((0, -2), (0, 2), (-2, 0), (2, 0)):
+        c.set(8 + dx, 8 + dy, EMBER_4)
+    for dx, dy in ((-1, -1), (1, 1), (-1, 1), (1, -1)):
+        c.set(8 + dx, 8 + dy, EMBER_2)
+    c.set(8, 8, WHITE)
+    c.set(7, 8, STAR_2)
+    return c
+
+
 # --------------------------------------------------------------------------
 # materials and trinkets
 # --------------------------------------------------------------------------
@@ -674,6 +739,9 @@ def main():
         "voidpiercer_pulling_0": voidpiercer(0),
         "voidpiercer_pulling_1": voidpiercer(1),
         "voidpiercer_pulling_2": voidpiercer(2),
+        "emberbrand": emberbrand(),
+        "starsteel_shard": starsteel_shard(),
+        "starforge_codex": starforge_codex(),
         "starsteel_ingot": starsteel_ingot(),
         "voidshard": voidshard(),
         "astral_core": astral_core(),

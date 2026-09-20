@@ -1,0 +1,63 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " a ",
+    " i ",
+    " c "
+  ],
+  "key": {
+    "a": "minecraft:amethyst_shard",
+    "i": "minecraft:iron_sword",
+    "c": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "minecraft:iron_sword",
+    "count": 1,
+    "components": {
+      "minecraft:item_model": "starforge:emberbrand",
+      "minecraft:item_name": {
+        "text": "Emberbrand",
+        "italic": false,
+        "color": "gold",
+        "bold": true
+      },
+      "minecraft:rarity": "uncommon",
+      "minecraft:lore": [
+        {
+          "text": "An apprentice blade.",
+          "italic": false,
+          "color": "gray"
+        },
+        {
+          "text": "It still remembers the fire.",
+          "italic": false,
+          "color": "gray"
+        }
+      ],
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:max_damage": 900,
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "amount": 7.0,
+          "id": "starforge:emberbrand.damage",
+          "operation": "add_value",
+          "slot": "mainhand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "amount": -2.2,
+          "id": "starforge:emberbrand.speed",
+          "operation": "add_value",
+          "slot": "mainhand"
+        }
+      ],
+      "minecraft:enchantments": {
+        "starforge:cinderbrand": 2,
+        "starforge:starfall": 2,
+        "starforge:eternal": 2
+      }
+    }
+  }
+}

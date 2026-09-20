@@ -1,0 +1,188 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "starforge:starforge_codex",
+                "minecraft:item_name": {
+                  "text": "Starforge Codex",
+                  "italic": false,
+                  "color": "gold",
+                  "bold": true
+                },
+                "minecraft:rarity": "uncommon",
+                "minecraft:lore": [
+                  {
+                    "text": "Everything the forge knows.",
+                    "italic": false,
+                    "color": "gray"
+                  },
+                  {
+                    "text": "Craft: book + amethyst shard.",
+                    "italic": false,
+                    "color": "gray"
+                  }
+                ],
+                "minecraft:written_book_content": {
+                  "title": "Starforge Codex",
+                  "author": "Starforge",
+                  "generation": 0,
+                  "resolved": true,
+                  "pages": [
+                    [
+                      {
+                        "text": "STARFORGE\n\n",
+                        "italic": false,
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "text": "A forge that runs on starlight.\n\n",
+                        "italic": false,
+                        "color": "black"
+                      },
+                      {
+                        "text": "Every Starforge recipe is already in your recipe book. Open it and search for the items below.\n\n",
+                        "italic": false,
+                        "color": "black"
+                      },
+                      {
+                        "text": "Turn the page to begin.",
+                        "italic": false,
+                        "color": "dark_gray"
+                      }
+                    ],
+                    [
+                      {
+                        "text": "I. FIRST SPARK\n\n",
+                        "italic": false,
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "text": "Starsteel Shard\n",
+                        "italic": false,
+                        "color": "black",
+                        "bold": true
+                      },
+                      {
+                        "text": "amethyst shard + copper ingot\n\n",
+                        "italic": false,
+                        "color": "dark_gray"
+                      },
+                      {
+                        "text": "Emberbrand\n",
+                        "italic": false,
+                        "color": "black",
+                        "bold": true
+                      },
+                      {
+                        "text": "amethyst shard, iron sword and copper ingot in a column.\n\n",
+                        "italic": false,
+                        "color": "dark_gray"
+                      },
+                      {
+                        "text": "A sword that burns what it cuts.",
+                        "italic": false,
+                        "color": "black"
+                      }
+                    ],
+                    [
+                      {
+                        "text": "II. STAR-METAL\n\n",
+                        "italic": false,
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "text": "Starsteel Ingot\n",
+                        "italic": false,
+                        "color": "black",
+                        "bold": true
+                      },
+                      {
+                        "text": "netherite ingot, 2 echo shards, blaze powder, amethyst\n\n",
+                        "italic": false,
+                        "color": "dark_gray"
+                      },
+                      {
+                        "text": "Voidshard\n",
+                        "italic": false,
+                        "color": "black",
+                        "bold": true
+                      },
+                      {
+                        "text": "echo shard, 2 amethyst, ender pearl, obsidian\n\n",
+                        "italic": false,
+                        "color": "dark_gray"
+                      },
+                      {
+                        "text": "Astral Core\n",
+                        "italic": false,
+                        "color": "black",
+                        "bold": true
+                      },
+                      {
+                        "text": "a nether star ringed with starsteel and voidshards.",
+                        "italic": false,
+                        "color": "dark_gray"
+                      }
+                    ],
+                    [
+                      {
+                        "text": "III. THE ARSENAL\n\n",
+                        "italic": false,
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "text": "Each relic is a nether star above its vanilla counterpart:\n\n",
+                        "italic": false,
+                        "color": "black"
+                      },
+                      {
+                        "text": "Starfall Blade\nWorldbreaker\nVoidpiercer\nStarforge Pickaxe\nthe four Starforge armour pieces\nHeart of the Star\nAstral Elixir",
+                        "italic": false,
+                        "color": "black"
+                      }
+                    ],
+                    [
+                      {
+                        "text": "IV. ENCHANTMENTS\n\n",
+                        "italic": false,
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "text": "Twelve new enchantments. Nine appear at the enchanting table:\n\n",
+                        "italic": false,
+                        "color": "black"
+                      },
+                      {
+                        "text": "Starfall, Cinderbrand, Soulrend, Skybreaker, Aegis, Voidstep, Starlight, Quarrymind, Eternal\n\n",
+                        "italic": false,
+                        "color": "black"
+                      },
+                      {
+                        "text": "Titanheart, Gravitas and Stormcaller are treasure only - trades, loot and the anvil.",
+                        "italic": false,
+                        "color": "dark_gray"
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
